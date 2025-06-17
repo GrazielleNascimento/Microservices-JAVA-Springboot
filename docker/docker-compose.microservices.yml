@@ -1,0 +1,150 @@
+networks:
+  microservices_network:
+    name: docker_microservices_network
+    external: true
+
+services:
+  # 🔹 Eureka Server - Primeiro a subir
+  eurekaserver:
+    build: ../EurekaServer
+    container_name: eurekaserver
+    environment:
+      SPRING_SECURITY_USER_NAME: admin
+      SPRING_SECURITY_USER_PASSWORD: admin
+      TZ: America/Sao_Paulo
+    ports:
+      - "8761:8761"
+    networks:
+      - microservices_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://admin:admin@localhost:8761/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # 🔹 Microservices (agora todos usam Eureka)
+  catsgft:
+    build: ../CatsGFT
+    container_name: catsgft
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_cats?createDatabaseIfNotExist=true&serverTimezone=America/Sao_Paulo
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://admin:admin@eurekaserver:8761/eureka/
+      SERVER_PORT: 8089
+    networks:
+      - microservices_network
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+    ports:
+      - "8089:8089"
+
+  dogsgft:
+    build: ../DogsGFT
+    container_name: dogsgft
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_dogs?createDatabaseIfNotExist=true&serverTimezone=America/Sao_Paulo
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://admin:admin@eurekaserver:8761/eureka/
+      SERVER_PORT: 8081
+    networks:
+      - microservices_network
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+    ports:
+      - "8081:8081"
+
+  mspets:
+    build: ../PetsGFT
+    container_name: mspets
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_pets?createDatabaseIfNotExist=true&serverTimezone=America/Sao_Paulo
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      CAT_API_BASEURL: http://catsgft:8089
+      DOG_API_BASEURL: http://dogsgft:8081
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://admin:admin@eurekaserver:8761/eureka/
+      SERVER_PORT: 8070
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+      catsgft:
+        condition: service_started
+      dogsgft:
+        condition: service_started
+    networks:
+      - microservices_network
+    ports:
+      - "8070:8070"
+
+  mscarescheduling:
+    build: ../MsCareScheduling
+    container_name: mscarescheduling
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/db_appointment?createDatabaseIfNotExist=true&serverTimezone=America/Sao_Paulo
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: root
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://admin:admin@eurekaserver:8761/eureka/
+      SERVER_PORT: 8083
+      TZ: America/Sao_Paulo
+      SPRING_JACKSON_TIME_ZONE: America/Sao_Paulo
+      SPRING_JPA_PROPERTIES_HIBERNATE_JDBC_TIME_ZONE: America/Sao_Paulo
+      JAVA_OPTS: "-Duser.timezone=America/Sao_Paulo"
+      USER_TIMEZONE: "America/Sao_Paulo"
+    networks:
+      - microservices_network
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+    ports:
+      - "8083:8083"
+
+  msnotification:
+    build: ../MsNotificationEmail
+    container_name: msnotification
+    environment:
+      RABBITMQ_HOST: rabbitmq
+      RABBITMQ_PORT: 5672
+      MAIL_HOST: mailhog
+      MAIL_PORT: 1025
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://admin:admin@eurekaserver:8761/eureka/
+      SERVER_PORT: 0
+    networks:
+      - microservices_network
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+      mspets:
+        condition: service_started
+      mscarescheduling:
+        condition: service_started
+
+
+
+#  # 🔹 API Gateway - Último a subir
+  msgateway:
+    build: ../MsCloudGateway
+    container_name: msgateway
+    environment:
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://admin:admin@eurekaserver:8761/eureka/
+      SERVER_PORT: 8080
+    networks:
+      - microservices_network
+    depends_on:
+      eurekaserver:
+        condition: service_healthy
+      mspets:
+        condition: service_started
+      msnotification:
+        condition: service_started
+      mscarescheduling:
+        condition: service_started
+    ports:
+      - "8080:8080"

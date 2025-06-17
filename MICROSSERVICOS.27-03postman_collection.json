@@ -1,0 +1,2789 @@
+{
+	"info": {
+		"_postman_id": "505e540c-c34a-4c41-9f1c-073f0fa910c5",
+		"name": "MICROSSERVICOS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42960596"
+	},
+	"item": [
+		{
+			"name": "MICROSSERVICOS",
+			"item": [
+				{
+					"name": "MsPet",
+					"item": [
+						{
+							"name": "DOG",
+							"item": [
+								{
+									"name": "Token",
+									"item": [
+										{
+											"name": "Create Token",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															""
+														],
+														"type": "text/javascript",
+														"packages": {}
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"username\": \"root\",\n    \"password\": \"root\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8081/authenticate",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8081",
+													"path": [
+														"authenticate"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "API DOG ",
+									"item": [
+										{
+											"name": "CREATE",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzQxMzc3OTE3LCJleHAiOjE3NDEzODE1MTd9.UiqFtNZOo-TfSDF2tZQcJWzZ9w7HQE6Un5KQu-wicW_9g9dOA5BQxrN6uvqlXGkITBgwCKtF2hfiIb1qvftg2A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"dog\",\n  \"breed\": \"Labrador Retriever\"\n\t\n}\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8181/api/dogs",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "UPDATE",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4Mzc2Njk2LCJleHAiOjE3MzgzODAyOTZ9.QMbUc8LGGShvwaHC_lhMdXBlqxDYsdEFx3YlKWfKPW-p3930V_HIQ4IvnGyQZ63TMBs5QKgWRKisbFJVQhUCJg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"Buddyyy\",\n  \"breed\": \"Labrador Retriever\",\n  \"imageUrl\": \"https://cdn2.thedogapi.com/images/BJa4kxc4X.jpg\"\n}\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8181/api/dogs/402",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs",
+														"402"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "FindALL",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzQxMzc3OTE3LCJleHAiOjE3NDEzODE1MTd9.UiqFtNZOo-TfSDF2tZQcJWzZ9w7HQE6Un5KQu-wicW_9g9dOA5BQxrN6uvqlXGkITBgwCKtF2hfiIb1qvftg2A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8181/api/dogs",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "ByID",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzQxMzc3OTE3LCJleHAiOjE3NDEzODE1MTd9.UiqFtNZOo-TfSDF2tZQcJWzZ9w7HQE6Un5KQu-wicW_9g9dOA5BQxrN6uvqlXGkITBgwCKtF2hfiIb1qvftg2A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8181/api/dogs/1",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs",
+														"1"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "DELETE",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjAyMzAyLCJleHAiOjE3MzgyMDY5MDJ9.MIs8vG5mAPxnYY2oAXuFbCz9Eu-rkJMgeaRFMIqUk0MXzt5wX0sPBrklOsSil21CcCpYsinoFHFp-ZTEOke43A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8080/api/dogs/1",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"api",
+														"dogs",
+														"1"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "RAÇA",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjAyMzAyLCJleHAiOjE3MzgyMDY5MDJ9.MIs8vG5mAPxnYY2oAXuFbCz9Eu-rkJMgeaRFMIqUk0MXzt5wX0sPBrklOsSil21CcCpYsinoFHFp-ZTEOke43A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8080/api/dogs/breed/Labrador Retriever",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"api",
+														"dogs",
+														"breed",
+														"Labrador Retriever"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "NOME",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjkzNDc2LCJleHAiOjE3MzgyOTcwNzZ9.rhrtcExKuWrjkTjBO6sC0wyhOZhIOVx62s48H5Wz-bQIkevmWwV-4OwhVIR19nrZ46KkmZKLmlKhpbI_BlujHg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8181/api/dogs/name/buddy",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs",
+														"name",
+														"buddy"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "RAÇA E NOME",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8181/api/dogs/breed-and-name?breed=Labrador Retriever&name=buddy",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs",
+														"breed-and-name"
+													],
+													"query": [
+														{
+															"key": "breed",
+															"value": "Labrador Retriever"
+														},
+														{
+															"key": "name",
+															"value": "buddy"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "NOME KEYWORD",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjAyMzAyLCJleHAiOjE3MzgyMDY5MDJ9.MIs8vG5mAPxnYY2oAXuFbCz9Eu-rkJMgeaRFMIqUk0MXzt5wX0sPBrklOsSil21CcCpYsinoFHFp-ZTEOke43A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8181/api/dogs/name-contains/bu",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs",
+														"name-contains",
+														"bu"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "RAÇA KEYWORD",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8181/api/dogs/breed-contains/la",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs",
+														"breed-contains",
+														"la"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Dogs que tem imagem",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjAyMzAyLCJleHAiOjE3MzgyMDY5MDJ9.MIs8vG5mAPxnYY2oAXuFbCz9Eu-rkJMgeaRFMIqUk0MXzt5wX0sPBrklOsSil21CcCpYsinoFHFp-ZTEOke43A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8181/api/dogs/with-image",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs",
+														"with-image"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "API EXTERNA Testes",
+									"item": [
+										{
+											"name": "New Request",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thedogapi.com/v1/images/0TBP2KS-y/",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thedogapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"images",
+														"0TBP2KS-y",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "consulta por todas raças na api externa",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thedogapi.com/v1/breeds?api_key=live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thedogapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"breeds"
+													],
+													"query": [
+														{
+															"key": "api_key",
+															"value": "live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "imagens aleatorias com a chave",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thedogapi.com/v1/images/search?limit=1&name=Affenpinscher&api_key=live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thedogapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"images",
+														"search"
+													],
+													"query": [
+														{
+															"key": "limit",
+															"value": "1"
+														},
+														{
+															"key": "name",
+															"value": "Affenpinscher"
+														},
+														{
+															"key": "api_key",
+															"value": "live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "KEY retorna as urls das imagens",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thedogapi.com/v1/breeds?api_key=live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thedogapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"breeds"
+													],
+													"query": [
+														{
+															"key": "api_key",
+															"value": "live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "busca imagem por raça",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjkzNDc2LCJleHAiOjE3MzgyOTcwNzZ9.rhrtcExKuWrjkTjBO6sC0wyhOZhIOVx62s48H5Wz-bQIkevmWwV-4OwhVIR19nrZ46KkmZKLmlKhpbI_BlujHg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thedogapi.com/v1/images/search?name=Affenpinsche?api_key=live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thedogapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"images",
+														"search"
+													],
+													"query": [
+														{
+															"key": "name",
+															"value": "Affenpinsche?api_key=live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "imagens aleatorias",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thedogapi.com/v1/images/search",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thedogapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"images",
+														"search"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "API Externa Consumo",
+									"item": [
+										{
+											"name": "Obter todos DOGS da API",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzQwNTIxNDQ1LCJleHAiOjE3NDA1MjUwNDV9.dORqwzh4H-bpK7icgU49O8aCXr8sUpBheLofq_ZH0SK9j3DHg9w1AM5P3ATUyVeVk24tiqVWghhRnl8HfbanDg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8181/api/dogs/fetch-all-breeds",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs",
+														"fetch-all-breeds"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Obter imagens de cães por raça API",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzQwNTIxNDQ1LCJleHAiOjE3NDA1MjUwNDV9.dORqwzh4H-bpK7icgU49O8aCXr8sUpBheLofq_ZH0SK9j3DHg9w1AM5P3ATUyVeVk24tiqVWghhRnl8HfbanDg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8181/api/dogs/fetch-images/Affenpinscher/1",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs",
+														"fetch-images",
+														"Affenpinscher",
+														"1"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": " Obter cães por raça API",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzQxMzc3OTE3LCJleHAiOjE3NDEzODE1MTd9.UiqFtNZOo-TfSDF2tZQcJWzZ9w7HQE6Un5KQu-wicW_9g9dOA5BQxrN6uvqlXGkITBgwCKtF2hfiIb1qvftg2A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8181/api/dogs/fetch-breeds?store=true",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8181",
+													"path": [
+														"api",
+														"dogs",
+														"fetch-breeds"
+													],
+													"query": [
+														{
+															"key": "store",
+															"value": "true"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "API EXTERNA",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thedogapi.com/v1/breeds",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thedogapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"breeds"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Cat",
+							"item": [
+								{
+									"name": "Token",
+									"item": [
+										{
+											"name": "Create Token",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n    \"username\": \"root\",\n    \"password\": \"root\"\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8089/authenticate",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"authenticate"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "API cat ",
+									"item": [
+										{
+											"name": "CREATE",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MzcyMjk0LCJleHAiOjE3MzgzNzU4OTR9.iJcmW3JFW4DVMN9X6iPJAYvtOYw-1d017Xh7SB5LCXof5CV3RBhTUnOwDj7_LPjYQOIX3jepzscBxLDuDYxw6A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"cat\",\n  \"breed\": \"Labrador Retriever\"\n\t\n}\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8089/api/cats",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "UPDATE",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4Mzc2Njk2LCJleHAiOjE3MzgzODAyOTZ9.QMbUc8LGGShvwaHC_lhMdXBlqxDYsdEFx3YlKWfKPW-p3930V_HIQ4IvnGyQZ63TMBs5QKgWRKisbFJVQhUCJg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"Buddyyy\",\n  \"breed\": \"Labrador Retriever\",\n  \"imageUrl\": \"https://cdn2.thecatapi.com/images/BJa4kxc4X.jpg\"\n}\n",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "http://localhost:8089/api/cats/402",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"402"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "FindALL",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4Mzc2Njk2LCJleHAiOjE3MzgzODAyOTZ9.QMbUc8LGGShvwaHC_lhMdXBlqxDYsdEFx3YlKWfKPW-p3930V_HIQ4IvnGyQZ63TMBs5QKgWRKisbFJVQhUCJg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "ByID",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjkzNDc2LCJleHAiOjE3MzgyOTcwNzZ9.rhrtcExKuWrjkTjBO6sC0wyhOZhIOVx62s48H5Wz-bQIkevmWwV-4OwhVIR19nrZ46KkmZKLmlKhpbI_BlujHg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/187",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"187"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "DELETE",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjAyMzAyLCJleHAiOjE3MzgyMDY5MDJ9.MIs8vG5mAPxnYY2oAXuFbCz9Eu-rkJMgeaRFMIqUk0MXzt5wX0sPBrklOsSil21CcCpYsinoFHFp-ZTEOke43A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/1",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"1"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "RAÇA",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjAyMzAyLCJleHAiOjE3MzgyMDY5MDJ9.MIs8vG5mAPxnYY2oAXuFbCz9Eu-rkJMgeaRFMIqUk0MXzt5wX0sPBrklOsSil21CcCpYsinoFHFp-ZTEOke43A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/breed/Labrador Retriever",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"breed",
+														"Labrador Retriever"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "NOME",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjkzNDc2LCJleHAiOjE3MzgyOTcwNzZ9.rhrtcExKuWrjkTjBO6sC0wyhOZhIOVx62s48H5Wz-bQIkevmWwV-4OwhVIR19nrZ46KkmZKLmlKhpbI_BlujHg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/name/buddy",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"name",
+														"buddy"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "RAÇA E NOME",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/breed-and-name?breed=Labrador Retriever&name=buddy",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"breed-and-name"
+													],
+													"query": [
+														{
+															"key": "breed",
+															"value": "Labrador Retriever"
+														},
+														{
+															"key": "name",
+															"value": "buddy"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "NOME KEYWORD",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjAyMzAyLCJleHAiOjE3MzgyMDY5MDJ9.MIs8vG5mAPxnYY2oAXuFbCz9Eu-rkJMgeaRFMIqUk0MXzt5wX0sPBrklOsSil21CcCpYsinoFHFp-ZTEOke43A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/name-contains/bu",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"name-contains",
+														"bu"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "RAÇA KEYWORD",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/breed-contains/la",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"breed-contains",
+														"la"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "cats que tem imagem",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjAyMzAyLCJleHAiOjE3MzgyMDY5MDJ9.MIs8vG5mAPxnYY2oAXuFbCz9Eu-rkJMgeaRFMIqUk0MXzt5wX0sPBrklOsSil21CcCpYsinoFHFp-ZTEOke43A",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/with-image",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"with-image"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "API EXTERNA Testes",
+									"item": [
+										{
+											"name": "New Request",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thecatapi.com/v1/images/0TBP2KS-y/",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thecatapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"images",
+														"0TBP2KS-y",
+														""
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "consulta por todas raças na api externa",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thecatapi.com/v1/breeds?api_key=live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thecatapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"breeds"
+													],
+													"query": [
+														{
+															"key": "api_key",
+															"value": "live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "imagens aleatorias com a chave",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thecatapi.com/v1/images/search?limit=1&name=Affenpinscher&api_key=live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thecatapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"images",
+														"search"
+													],
+													"query": [
+														{
+															"key": "limit",
+															"value": "1"
+														},
+														{
+															"key": "name",
+															"value": "Affenpinscher"
+														},
+														{
+															"key": "api_key",
+															"value": "live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "KEY retorna as urls das imagens",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thecatapi.com/v1/breeds?api_key=live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thecatapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"breeds"
+													],
+													"query": [
+														{
+															"key": "api_key",
+															"value": "live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "busca imagem por raça",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MjkzNDc2LCJleHAiOjE3MzgyOTcwNzZ9.rhrtcExKuWrjkTjBO6sC0wyhOZhIOVx62s48H5Wz-bQIkevmWwV-4OwhVIR19nrZ46KkmZKLmlKhpbI_BlujHg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thecatapi.com/v1/images/search?name=Affenpinsche?api_key=live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thecatapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"images",
+														"search"
+													],
+													"query": [
+														{
+															"key": "name",
+															"value": "Affenpinsche?api_key=live_9W3ZEwtgECJUWRmwKZTvAfqZxXlCyTFg2rN6zH0oxqrZBZkamlJPzxOm4ZeKSOqH"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "imagens aleatorias",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thecatapi.com/v1/images/search",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thecatapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"images",
+														"search"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "API Externa Consumo",
+									"item": [
+										{
+											"name": "Obter imagens de cães por raça API",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4Mzc2Njk2LCJleHAiOjE3MzgzODAyOTZ9.QMbUc8LGGShvwaHC_lhMdXBlqxDYsdEFx3YlKWfKPW-p3930V_HIQ4IvnGyQZ63TMBs5QKgWRKisbFJVQhUCJg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/fetch-images/Affenpinscher/1",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"fetch-images",
+														"Affenpinscher",
+														"1"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": " Obter cães por raça API",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4Mzc2Njk2LCJleHAiOjE3MzgzODAyOTZ9.QMbUc8LGGShvwaHC_lhMdXBlqxDYsdEFx3YlKWfKPW-p3930V_HIQ4IvnGyQZ63TMBs5QKgWRKisbFJVQhUCJg",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/fetch-breeds?store=true",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"fetch-breeds"
+													],
+													"query": [
+														{
+															"key": "store",
+															"value": "true"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "API EXTERNA",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "https://api.thecatapi.com/v1/breeds",
+													"protocol": "https",
+													"host": [
+														"api",
+														"thecatapi",
+														"com"
+													],
+													"path": [
+														"v1",
+														"breeds"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "Obter todos catS da API",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"type": "text/javascript",
+														"exec": []
+													}
+												}
+											],
+											"protocolProfileBehavior": {
+												"followRedirects": true,
+												"disableUrlEncoding": false,
+												"disableCookies": false
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJyb290IiwiaWF0IjoxNzM4MzczMzk3LCJleHAiOjE3MzgzNzY5OTd9.I8fThrGwphDBGYghNAiBUofVDa5tH4kPofWz4nHbJBqRADt6JInvjbqw8FUtd6-5CLmEdeIoba_QpfizjpItRA",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [
+													{
+														"key": "User-Agent",
+														"value": "insomnia/10.3.0"
+													}
+												],
+												"url": {
+													"raw": "http://localhost:8089/api/cats/fetch-all-breeds",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8089",
+													"path": [
+														"api",
+														"cats",
+														"fetch-all-breeds"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "GET ALL PETS",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "User-Agent",
+										"value": "insomnia/10.3.1"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:8080/api/pets",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"pets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL FILTERS",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/pets/search?species=CAT&color=preto?species=CAT&breed=siames",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"pets",
+										"search"
+									],
+									"query": [
+										{
+											"key": "species",
+											"value": "CAT"
+										},
+										{
+											"key": "breed",
+											"value": "siames"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "CREATE PET",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"name\": \"Rayka\",\n   \"species\": \"DOG\",\n   \"breed\": \"GOLDEN\",\n   \"birthDate\": \"2020-03-07\",\n   \"weight\": 30.0,\n   \"color\": \"branca\",\n   \"description\": \"Friendly\",\n   \"tutor\": {\n     \"name\": \"Jonh Clark\",\n     \"email\": \"jonh.clark@example.com\"\n   }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/pets",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"pets"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET BY ID",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/pets/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"pets",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n   \"name\": \"MEL\",\n   \"species\": \"DOG\",\n   \"breed\": \"GOLDEN\",\n   \"birthDate\": \"2020-03-07\",\n   \"weight\": 30.0,\n   \"color\": \"branca\",\n   \"description\": \"Friendly\",\n   \"tutor\": {\n     \"name\": \"Lara Clark\",\n     \"email\": \"lara.clark@example.com\"\n   }\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/api/pets/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"pets",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL Filtro por tutor",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/pets/search?tutor=Alice%20Clark",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"pets",
+										"search"
+									],
+									"query": [
+										{
+											"key": "tutor",
+											"value": "Alice%20Clark"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MsCareScheduling",
+					"item": [
+						{
+							"name": "cria agendamento manual",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"type": "text/javascript",
+										"exec": []
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"followRedirects": true,
+								"disableUrlEncoding": false,
+								"disableCookies": false
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"petId\": 4,\r\n    \"careType\": \"FIRST_VACCINE\",\r\n    \"description\": \"friendly\",\r\n    \"dateAppointment\": \"2025-03-03T23:05:00\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/appointment/manual",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appointment",
+										"manual"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "TODOS AGENDAMENTOS",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "CANCELAR AGENDAMENTO",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/appointment/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appointment",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "REAGENDAR NOVA DATA",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newDate\": \"2024-03-25T15:00:00\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/appointment/1/reschedule",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appointment",
+										"1",
+										"reschedule"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "AGENDAR/CONFIRMAR",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/appointment/1/confirm",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"appointment",
+										"1",
+										"confirm"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "MsNotification",
+					"item": [
+						{
+							"name": "GET WITH FILTER",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Marcar Notificação como Lida",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/notifications/read-batch",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"notifications",
+										"read-batch"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Marcar Múltiplas Notificações como Lidas",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/notifications/read-batch",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"notifications",
+										"read-batch"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Reenviar Notificação",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/api/notifications/1/resend",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"api",
+										"notifications",
+										"1",
+										"resend"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "New Request",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "GET ALL",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,69 @@
+spring:
+  application:
+    name: msnotificationemail
+
+  datasource:
+#    url: jdbc:mysql://localhost:3306/db_email?createDatabaseIfNotExist=true&serverTimezone=America/Sao_Paulo&useSSL=false
+    url: jdbc:mysql://mysql:3306/db_email?createDatabaseIfNotExist=true&serverTimezone=America/Sao_Paulo&useSSL=false
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # JPA properties should be at this level, not under datasource
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+    show-sql: true
+
+  rabbitmq:
+
+    host: rabbitmq
+    port: 5672
+#    host: localhost
+#    port: 5673
+    username: guest
+    password: guest
+    listener:
+      simple:
+        retry:
+          enabled: true
+          initial-interval: 1000
+          max-attempts: 3
+          max-interval: 10000
+          multiplier: 2.0
+
+server:
+  port: 8085
+
+notification:
+  host_name: mailhog
+#  host_name: localhost
+  host_port: "1025"
+  port: "1025"
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://admin:admin@localhost:8761/eureka/
+    fetch-registry: true
+    register-with-eureka: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+# Add these logging settings to see SQL operations
+logging:
+  level:
+    org.hibernate.SQL: DEBUG
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    org.springframework.data: DEBUG
+    br.com.msnotificationemail: DEBUG
+
+app:
+  tracking:
+    url: http://localhost:8080

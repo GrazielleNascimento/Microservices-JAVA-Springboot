@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: EurekaServer
+  security:
+    user:
+      name: admin
+      password: admin
+
+server:
+  port: 8761
+
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+  server:
+    renewal-threshold-update-interval-ms: 60000 # Adjust the interval as needed
+    eviction-interval-timer-in-ms: 60000 # Adjust the interval as needed
+  instance:
+    lease-renewal-interval-in-seconds: 10 # Adjust the interval as needed
+    lease-expiration-duration-in-seconds: 30 # Adjust the interval as needed

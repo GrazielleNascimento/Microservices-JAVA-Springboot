@@ -1,0 +1,14 @@
+# Ignore Maven build files except the JAR file
+target/
+!target/*.jar
+
+# Ignore IntelliJ IDEA project files
+.idea/
+*.iml
+
+# Ignore logs
+*.log
+
+# Ignore temporary files
+*.tmp
+*.swp
